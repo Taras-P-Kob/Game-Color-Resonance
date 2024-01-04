@@ -1,0 +1,74 @@
+body {
+    font-family: 'Arial', yellow;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.game-button {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0; /* Видалення тексту з кнопок */
+    background-color: #888;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.game-button:hover {
+    transform: scale(1.1);
+}
+
+.game-button:active {
+    transform: scale(0.9);
+}
+
+/* Стилі для різних кольорів */
+.color-red {
+    background-color: #ff5555;
+}
+
+/* Стилі для підсвічування кнопок */
+.game-button.active {
+    opacity: 0.7; /* Зробити кнопку трохи прозорішою, щоб створити ефект світіння */
+    transform: scale(1.1); /* Трохи збільшити кнопку */
+}
+
+.color-green {
+    background-color: #55ff55;
+}
+
+.color-blue {
+    background-color: #5555ff;
+}
+
+.color-yellow {
+    background-color: #ffff55;
+}
+
+#level {
+    color: blue; /* змініть на бажаний колір */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: white; /* встановлює білий колір як фоновий */
+    height: 100%; /* забезпечує, що фон простягається на всю висоту сторінки */
+}
