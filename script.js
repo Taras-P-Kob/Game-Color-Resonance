@@ -22,9 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function lightUp(color) {
         const button = document.querySelector(`.color-${color}`);
         button.classList.add('active');
+        playSound(color);  // Додавання виклику функції відтворення звуку
         setTimeout(() => button.classList.remove('active'), 300);
     }
-
+    
     let highScore = 0;
 
     // Обробка вводу гравця
@@ -68,10 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
             updateHighScoreDisplay();
         }
     
-        const nextColor = colors[Math.floor(Math.random() * colors.length)];
+        let nextColor;
+        do {
+            nextColor = colors[Math.floor(Math.random() * colors.length)];
+        } while (sequence.length > 0 && nextColor === sequence[sequence.length - 1]);
+    
         sequence.push(nextColor);
         showSequence();
     }
+    
 
     function updateHighScoreDisplay() {
         const highScoreElement = document.getElementById('Рекорд');
@@ -103,3 +109,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Обробник події для кнопки "Почати гру"
     startGameButton.addEventListener('click', startGame);
 });
+
+const sounds = {
+    red: new Audio('./Sounds/sound1.wav'),
+    green: new Audio('./Sounds/sound2.wav'),
+    blue: new Audio('./Sounds/sound3.wav'),
+    yellow: new Audio('./Sounds/sound4.wav')
+};
+
+function handlePlayerInput(color) {
+    playerSequence.push(color);
+    playSound(color);
+    // Решта коду функції...
+}
+
+function playSound(color) {
+    if (isSoundEnabled) {
+        sounds[color].play().catch(e => console.error('Помилка відтворення звуку:', e));
+    }
+}
+
+
+let isSoundEnabled = true;
+
+function toggleSound() {
+    isSoundEnabled = !isSoundEnabled;
+    document.getElementById('soundToggleButton').textContent = isSoundEnabled ? 'Вимкнути звук' : 'Увімкнути звук';
+}
+
+document.getElementById('soundToggleButton').addEventListener('click', toggleSound);
