@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function handlePlayerInput(color) {
     playerSequence.push(color);
     playSound(color);
+    lightUp(color);
     const currentLevel = playerSequence.length;
     if (playerSequence[currentLevel - 1] !== sequence[currentLevel - 1]) {
         alert('Wrong! Game over.');
