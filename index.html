@@ -4,22 +4,27 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="icon" href="./Icon/Simon_icon.png">
     <title>Memory Game</title>
-    <style>
-        
-    </style>
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Memory Game</h1>
     <p><span id="Record">0</span></p>
     <p><span id="level">0</span></p>
-    <button id="soundToggleButton">Turn off the sound</button>
-
+    <button id="soundToggleButton">Sound on</button>
     <button id="startGameButton">Start the game</button>
-    <div id="gameBoard" class="game-container">
-    </div>
-    <script>
-    </script>
+    <div id="gameBoard" class="game-container"></div>
     <script src="script.js"></script>
+    <script>
+        document.getElementById("soundToggleButton").addEventListener("click", function() {
+            var button = document.getElementById("soundToggleButton");
+            if (button.innerText === "Turn off the sound") {
+                button.innerText = "Sounds on";
+                button.style.backgroundColor = "#4CAF50";
+            } else {
+                button.innerText = "Sounds off";
+                button.style.backgroundColor = "#e74c3c";
+            }
+        });
+    </script>
 </body>
 </html>
