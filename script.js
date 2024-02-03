@@ -121,3 +121,4 @@ function toggleSound() {
 }
 
 document.getElementById('soundToggleButton').addEventListener('click', toggleSound);
+document.getElementById('startGameButton').addEventListener('click', startGame);
