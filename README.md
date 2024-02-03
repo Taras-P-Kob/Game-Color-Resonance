@@ -1,6 +1,8 @@
 # Game Color Resonance
 Web Color memorization game
 
+Game link:
+https://taras-p-kob.github.io/Game-Color-Resonance/
 
 https://github.com/Taras-P-Kob/Game-Color-Resonance/assets/119957094/113284d7-bf6f-49f6-92f1-6bd93a7b0289
 
